@@ -2,11 +2,14 @@ syntax = "proto3";
 package hello.planet.planet;
 
 // this line is used by starport scaffolding # genesis/proto/import
+import "planet/post.proto";
 
 option go_package = "github.com/hello/planet/x/planet/types";
 
 // GenesisState defines the planet module's genesis state.
 message GenesisState {
     // this line is used by starport scaffolding # genesis/proto/state
+		repeated Post postList = 1; // this line is used by starport scaffolding # genesis/proto/stateField
+		uint64 postCount = 2; // this line is used by starport scaffolding # genesis/proto/stateField
     // this line is used by starport scaffolding # ibc/genesis/proto
 }
